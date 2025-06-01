@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterinary Practice Management</title>
+    <title>Dashboard - Tailmates</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <div class="container">
         <nav class="sidebar">
             <div class="brand">
-                <a href="#" class="brand-link">Tailmates</a>
+                <a href="index.html" class="brand-link">Tailmates</a>
             </div>
             <div class="nav-items">
-                <button class="nav-item" data-section="karteikarte">Karteikarte</button>
-                <button class="nav-item" data-section="kalender">Kalender</button>
-                <button class="nav-item" data-section="wartezimmer">Wartezimmer</button>
-                <button class="nav-item" data-section="tagesprotokoll">Tagesprotokoll</button>
-                <button class="nav-item" data-section="stammdaten">Stammdaten</button>
-                <button class="nav-item" data-section="bestandsverwaltung">Bestandsverwaltung</button>
-                <button class="nav-item" data-section="laborbuch">Laborbuch</button>
-                <button class="nav-item" data-section="nachrichten">Nachrichten</button>
-                <button class="nav-item" data-section="finanzen">Finanzen</button>
+                <a href="#" class="nav-item" data-section="karteikarte">Karteikarte</a>
+                <a href="#" class="nav-item" data-section="kalender">Kalender</a>
+                <a href="#" class="nav-item" data-section="wartezimmer">Wartezimmer</a>
+                <a href="#" class="nav-item" data-section="tagesprotokoll">Tagesprotokoll</a>
+                <a href="#" class="nav-item" data-section="stammdaten">Stammdaten</a>
+                <a href="#" class="nav-item" data-section="bestandsverwaltung">Bestandsverwaltung</a>
+                <a href="#" class="nav-item" data-section="laborbuch">Laborbuch</a>
+                <a href="#" class="nav-item" data-section="nachrichten">Nachrichten</a>
+                <a href="#" class="nav-item" data-section="finanzen">Finanzen</a>
             </div>
             <div class="nav-footer">
-                <button class="nav-item" data-section="settings">Einstellungen</button>
+                <a href="#" class="nav-item" data-section="settings">Einstellungen</a>
             </div>
         </nav>
+        
         <main class="content">
             <div class="profile-button">
                 <button class="profile-btn" data-section="profile">
@@ -34,12 +36,87 @@
                     <span class="profile-text">Profil</span>
                 </button>
             </div>
-            <div id="content-area">
-                <h1>Willkommen bei der Veterinärpraxis</h1>
-                <p>Bitte wählen Sie einen Bereich aus dem Menü aus.</p>
+
+            <!-- Welcome Header -->
+            <header class="dashboard-header">
+                <div class="welcome-section">
+                    <h1>Guten Morgen, Dr. Schmidt</h1>
+                    <p id="currentDate" class="date-display"></p>
+                </div>
+            </header>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+                <button class="action-btn" data-action="new-card">
+                    <span class="action-icon">📋</span>
+                    <span class="action-text">Neue Karteikarte</span>
+                </button>
+                <button class="action-btn" data-action="new-appointment">
+                    <span class="action-icon">📅</span>
+                    <span class="action-text">Neuer Termin</span>
+                </button>
+                <button class="action-btn" data-action="new-note">
+                    <span class="action-icon">📝</span>
+                    <span class="action-text">Neue Notiz</span>
+                </button>
+                <button class="action-btn" data-action="new-protocol">
+                    <span class="action-icon">📋</span>
+                    <span class="action-text">Neues Tagesprotokoll</span>
+                </button>
+            </section>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Today's Appointments -->
+                <section class="dashboard-card appointments">
+                    <h2>Heutige Termine</h2>
+                    <div class="appointments-list" id="appointmentsList">
+                        <!-- Appointments will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Waiting Room -->
+                <section class="dashboard-card waiting-room">
+                    <h2>Wartezimmer</h2>
+                    <div class="waiting-list" id="waitingList">
+                        <!-- Waiting patients will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Notifications -->
+                <section class="dashboard-card notifications">
+                    <h2>Benachrichtigungen</h2>
+                    <div class="notifications-list" id="notificationsList">
+                        <!-- Notifications will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Summary Stats -->
+                <section class="dashboard-card stats">
+                    <h2>Zusammenfassung</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value" id="appointmentsCount">0</span>
+                            <span class="stat-label">Termine heute</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="waitingCount">0</span>
+                            <span class="stat-label">Im Wartezimmer</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="labResultsCount">0</span>
+                            <span class="stat-label">Neue Laborergebnisse</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="dailyRevenue">0 €</span>
+                            <span class="stat-label">Umsatz heute</span>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
     </div>
     <script src="script.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html> 

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender - Tailmates</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="kalender.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="brand">
+                <a href="index.html" class="brand-link">Tailmates</a>
+            </div>
+            <div class="nav-items">
+                <a href="#" class="nav-item" data-section="karteikarte">Karteikarte</a>
+                <a href="#" class="nav-item" data-section="kalender">Kalender</a>
+                <a href="#" class="nav-item" data-section="wartezimmer">Wartezimmer</a>
+                <a href="#" class="nav-item" data-section="tagesprotokoll">Tagesprotokoll</a>
+                <a href="#" class="nav-item" data-section="stammdaten">Stammdaten</a>
+                <a href="#" class="nav-item" data-section="bestandsverwaltung">Bestandsverwaltung</a>
+                <a href="#" class="nav-item" data-section="laborbuch">Laborbuch</a>
+                <a href="#" class="nav-item" data-section="nachrichten">Nachrichten</a>
+                <a href="#" class="nav-item" data-section="finanzen">Finanzen</a>
+            </div>
+            <div class="nav-footer">
+                <a href="#" class="nav-item" data-section="settings">Einstellungen</a>
+            </div>
+        </nav>
+        
+        <main class="content">
+            <div class="profile-button">
+                <button class="profile-btn" data-section="profile">
+                    <span class="profile-icon">👤</span>
+                    <span class="profile-text">Profil</span>
+                </button>
+            </div>
+            
+            <header class="content-header">
+                <h1>Kalender</h1>
+                <div class="header-actions">
+                    <button id="addAppointmentBtn" class="btn-primary">+ Neuer Termin</button>
+                </div>
+            </header>
+
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="btn-icon">←</button>
+                    <h2 id="currentMonthYear">Juni 2025</h2>
+                    <button id="nextMonth" class="btn-icon">→</button>
+                </div>
+
+                <div class="calendar-grid">
+                    <div class="weekdays">
+                        <div>Mo</div>
+                        <div>Di</div>
+                        <div>Mi</div>
+                        <div>Do</div>
+                        <div>Fr</div>
+                        <div>Sa</div>
+                        <div>So</div>
+                    </div>
+                    <div id="calendarDays" class="days"></div>
+                </div>
+            </section>
+
+            <div id="appointmentModal" class="modal">
+                <div class="modal-content">
+                    <h3>Neuer Termin</h3>
+                    <form id="appointmentForm">
+                        <div class="form-group">
+                            <label for="appointmentTime">Uhrzeit</label>
+                            <input type="time" id="appointmentTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patientName">Patient</label>
+                            <input type="text" id="patientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointmentReason">Grund</label>
+                            <textarea id="appointmentReason" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="cancelAppointment">Abbrechen</button>
+                            <button type="submit" class="btn-primary">Speichern</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="viewAppointmentsModal" class="modal">
+                <div class="modal-content">
+                    <h3>Termine am <span id="selectedDate"></span></h3>
+                    <div id="appointmentsList"></div>
+                    <div class="modal-actions">
+                        <button class="btn-secondary" id="closeAppointments">Schließen</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="kalender.js"></script>
+</body>
+</html> 

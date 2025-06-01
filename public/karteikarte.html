@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karteikarte - Tailmates</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="karteikarte.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="brand">
+                <a href="index.html" class="brand-link">Tailmates</a>
+            </div>
+            <div class="nav-items">
+                <a href="#" class="nav-item" data-section="karteikarte">Karteikarte</a>
+                <a href="#" class="nav-item" data-section="kalender">Kalender</a>
+                <a href="#" class="nav-item" data-section="wartezimmer">Wartezimmer</a>
+                <a href="#" class="nav-item" data-section="tagesprotokoll">Tagesprotokoll</a>
+                <a href="#" class="nav-item" data-section="stammdaten">Stammdaten</a>
+                <a href="#" class="nav-item" data-section="bestandsverwaltung">Bestandsverwaltung</a>
+                <a href="#" class="nav-item" data-section="laborbuch">Laborbuch</a>
+                <a href="#" class="nav-item" data-section="nachrichten">Nachrichten</a>
+                <a href="#" class="nav-item" data-section="finanzen">Finanzen</a>
+            </div>
+            <div class="nav-footer">
+                <a href="#" class="nav-item" data-section="settings">Einstellungen</a>
+            </div>
+        </nav>
+        
+        <main class="content">
+            <div class="profile-button">
+                <button class="profile-btn" data-section="profile">
+                    <span class="profile-icon">👤</span>
+                    <span class="profile-text">Profil</span>
+                </button>
+            </div>
+            
+            <div class="karteikarte-container">
+                <!-- Animal Profile Section -->
+                <section class="profile-section">
+                    <h2>Tierprofil</h2>
+                    <form id="animalProfileForm" class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" placeholder="Tiername">
+                            </div>
+                            <div class="form-group">
+                                <label for="species">Spezies</label>
+                                <input type="text" id="species" placeholder="z.B. Hund, Katze">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="breed">Rasse</label>
+                                <input type="text" id="breed" placeholder="Rasse">
+                            </div>
+                            <div class="form-group">
+                                <label for="birthdate">Geburtsdatum</label>
+                                <input type="date" id="birthdate">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="sex">Geschlecht</label>
+                                <select id="sex">
+                                    <option value="">Bitte wählen</option>
+                                    <option value="male">Männlich</option>
+                                    <option value="female">Weiblich</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="color">Farbe</label>
+                                <input type="text" id="color" placeholder="Fellfarbe">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="chipNumber">Chip-Nummer</label>
+                                <input type="text" id="chipNumber" placeholder="Chip-Nummer">
+                            </div>
+                            <div class="form-group">
+                                <label for="ownerName">Besitzer</label>
+                                <input type="text" id="ownerName" placeholder="Name des Besitzers">
+                            </div>
+                        </div>
+                        <button type="submit" class="save-btn">Profil speichern</button>
+                    </form>
+                </section>
+
+                <!-- Visit History Section -->
+                <section class="visit-section">
+                    <h2>Besuchsverlauf</h2>
+                    <form id="visitForm" class="visit-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visitDate">Datum</label>
+                                <input type="date" id="visitDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="visitReason">Grund</label>
+                                <input type="text" id="visitReason" placeholder="Besuchsgrund" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="diagnosis">Diagnose</label>
+                            <textarea id="diagnosis" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="treatment">Behandlung</label>
+                            <textarea id="treatment" rows="2" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitNotes">Notizen</label>
+                            <textarea id="visitNotes" rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="save-btn">Besuch hinzufügen</button>
+                    </form>
+                    <div id="visitHistory" class="visit-history">
+                        <h3>Letzte Besuche</h3>
+                        <div class="visit-list"></div>
+                    </div>
+                </section>
+
+                <!-- Vaccination Records Section -->
+                <section class="vaccination-section">
+                    <h2>Impfungen</h2>
+                    <form id="vaccinationForm" class="vaccination-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vaccineName">Impfstoff</label>
+                                <input type="text" id="vaccineName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vaccineDate">Datum</label>
+                                <input type="date" id="vaccineDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nextDueDate">Nächste Impfung fällig</label>
+                                <input type="date" id="nextDueDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="batchNumber">Chargennummer</label>
+                                <input type="text" id="batchNumber" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="save-btn">Impfung hinzufügen</button>
+                    </form>
+                    <div class="vaccination-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Impfstoff</th>
+                                    <th>Datum</th>
+                                    <th>Nächste Impfung</th>
+                                    <th>Chargennummer</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vaccinationList"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Internal Notes Section -->
+                <section class="notes-section">
+                    <h2>Interne Notizen</h2>
+                    <form id="notesForm" class="notes-form">
+                        <div class="form-group">
+                            <textarea id="internalNotes" rows="4" placeholder="Interne Notizen..."></textarea>
+                        </div>
+                        <button type="submit" class="save-btn">Notizen speichern</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script src="karteikarte.js"></script>
+</body>
+</html> 

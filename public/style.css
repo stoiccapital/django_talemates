@@ -60,15 +60,18 @@ body {
 }
 
 .nav-item {
-    background: none;
-    border: none;
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
     color: #fff;
-    padding: 1rem 2rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
     text-align: left;
     font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
 }
 
 .nav-item:hover {
@@ -77,6 +80,7 @@ body {
 
 .nav-item.active {
     background-color: #333;
+    font-weight: bold;
 }
 
 .content {
